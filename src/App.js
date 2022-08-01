@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Profile from "./Profile/Profile";
+import profileImage from "./ProfilePhoto.jpg";
 
 function App() {
+  function HandleName(fullname) {
+    alert(`my name is ${fullname}`);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profile
+        fullname="Ghada Bousselmi"
+        bio="web developper"
+        profession="Graphic Designer"
+        HandleName={HandleName}
+      >
+        <img
+          src={profileImage}
+          alt="image de ghada"
+          style={{ height: "200px", width: "100" }}
+        />
+      </Profile>
     </div>
   );
 }
